@@ -8,12 +8,36 @@ package com.mycompany.csc325_oop_designreview_lab;
  *
  * @author MoaathAlrajab
  */
-public class Student {
-	// ToDo 1: Make this class a child of Human
+public class Student extends Human{
+    private int credits;
+    private double gpa;
 
-	// ToDo 2: Fix the resulting errors
+    //constructor that takes 3 params
+    public Student (String name, short age, int credits) {
+        super(name, age);
+        this.credits = credits;
+    }
 
-	// ToDo 3: Add a field for GPA and create a setter and a getter
-	
-	// ToDo 4: Add comments to your code
+    /* Im pretty sure i could have just deleted getAddress since
+    it's never used, but i decided to not remove it*/
+    @Override
+    public String getAddress() { return null; }
+    @Override
+    public void setAddress(String address) { }
+
+    //getter and setter for GPA
+    public double getGpa() { return gpa; }
+
+    public void setGpa(double gpa) { this.gpa = gpa; }
+
+    //getter and setter for credits
+    public int getCredits() { return credits; }
+
+    public void setCredits(int credits) { this.credits = credits; }
+
+    //to string method to print student and GPA
+    @Override
+    public String toString() {
+        return "Student(Name: " + getName() + ", Age: " + getAge() + ", " + "Credits: " + getCredits() +  ", GPA: " + getGpa() + ")";
+    }
 }
